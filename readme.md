@@ -1,10 +1,11 @@
 # Seal Project 2
 
--** Christian Alexander ** 
--** TodoList App ** 
--** An App where the user can add, edit and delete todos ** 
--** https://github.com/Adrick1210/seal-project2.git ** -** Deployed Website: ** 
--** https://trello.com/b/RwV3fG3X/todo-list-aop **
+## Christian Alexander 
+### TodoList App ** 
+##### An App where the user can add, edit and delete todos 
+ https://github.com/Adrick1210/seal-project2.git ** 
+ -** Deployed Website: ** 
+ https://trello.com/b/RwV3fG3X/todo-list-aop **
 
 ## List of Dependencies
 
