@@ -3,9 +3,9 @@
 ## Christian Alexander 
 ### TodoList App 
 ##### An App where the user can add, edit and delete todos 
- https://github.com/Adrick1210/seal-project2.git
- https://seal-project.onrender.com
- https://trello.com/b/RwV3fG3X/todo-list-aop
+ - https://github.com/Adrick1210/seal-project2.git
+ - https://seal-project.onrender.com
+ - https://trello.com/b/RwV3fG3X/todo-list-aop
 
 ## List of Dependencies
 
@@ -20,6 +20,9 @@
 - ejs
 
 ##### Frontend (If used, ex. jquery, alpine, bootstrap, htmx, etc)
+
+- Alpine
+- Javascript
 
 ## Route Map
 
@@ -39,11 +42,11 @@ Below should be a table listing the different routes in your app and their purpo
 
 ##### Mobile Design
 
-![Mobile Design Mockup](./url-to-picture.jpg)
+![Mobile Design Mockup](./images/mobile.png)
 
 ##### Desktop Design
 
-![Desktop Design Mockup](./url-to-picture.jpg)
+![Desktop Design Mockup](./images/desktop.png)
 
 ## ERD (entity relationship diagram)
 
