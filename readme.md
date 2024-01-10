@@ -18,11 +18,17 @@
 - mongoose
 - dotenv
 - ejs
+- bcryptjs
+- express-session 
+- connect-mongo
 
 ##### Frontend (If used, ex. jquery, alpine, bootstrap, htmx, etc)
 
 - Alpine
 - Javascript
+- Jquery
+- CSS
+- HTMX
 
 ## Route Map
 
@@ -50,4 +56,4 @@ Below should be a table listing the different routes in your app and their purpo
 
 ## ERD (entity relationship diagram)
 
-![entity relationship diagram](./url-to-picture.jpg)
+![entity relationship diagram](./images/erd.png)

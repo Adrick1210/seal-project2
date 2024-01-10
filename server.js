@@ -28,6 +28,7 @@ const app = express();
 // MIDDLE WARE
 
 // ROUTES
+// Test
 app.get("/", (req, res) => {
   res.send("It's Working");
 });
