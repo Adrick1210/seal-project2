@@ -73,6 +73,16 @@ app.get("/todos", async (req, res) => {
 // Destroy
 
 // Show
+app.get("/todos/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const todos = await Todo.findById(id);
+    res.render("show.ejs", { todos });
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // LISTENER
 app.listen(PORT, () => {

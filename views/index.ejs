@@ -7,9 +7,9 @@
       <ul class="list">
         <% for(let i = 0; i < todos.length; i++) { %>
         <div class="card">
-          <a href="/todos/<%= i %>"><h2><%= todos[i].title %></h2></a>
-          <p class="desc"><%= todos[i].description %></p>
-          <h3 class="comp">
+          <a href="/todos/<%= todos[i]._id %>"><h2><%= todos[i].title %></h2></a>
+          <p class="description"><%= todos[i].description %></p>
+          <h3 class="complete">
             <%= todos[i].isComplete ? "Completed" : "Not Complete"%>
           </h3>
           <div class="buttons">
