@@ -6,6 +6,15 @@
     <title>Todo List</title>
 </head>
 <body>
-    <h1>Lets make some todos</h1>
+    <h1>Todo List</h1>
+    <div class="content">
+    <% for(let i = 0; i < todos.length; i++) { %>
+    <div class="card">
+        <a href="/todos/<%= i %>"><h2><%= todos[i].title %></h2></a>
+        <p><%= todos[i].description %></p>
+        <h3><%= todos[i].isComplete ? "Completed" : "Not Complete"%></h3>
+    </div>
+    <% } %>
+    </div>
 </body>
 </html>

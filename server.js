@@ -40,6 +40,16 @@ app.get("/", (req, res) => {
 });
 
 // Seed
+app.get("/todos/seed", async (req, res) => {
+  try {
+    await Todo.deleteMany({});
+    const todos = await Todo.create(seedData);
+    res.json(todos);
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // Index
 app.get("/todos", async (req, res) => {
