@@ -1,0 +1,15 @@
+.edit img{
+    height: 45px;
+    width: 45px;
+}
+
+.delete img{
+    height: 45px;
+    width: 45px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}

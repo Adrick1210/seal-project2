@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
-</head>
-<body>
+  <%- include("./partials/head.ejs") %>
+  <body>
     <h1>Todo List</h1>
     <div class="content">
-    <% for(let i = 0; i < todos.length; i++) { %>
-    <div class="card">
-        <a href="/todos/<%= i %>"><h2><%= todos[i].title %></h2></a>
-        <p><%= todos[i].description %></p>
-        <h3><%= todos[i].isComplete ? "Completed" : "Not Complete"%></h3>
+      <ul class="list">
+        <% for(let i = 0; i < todos.length; i++) { %>
+        <div class="card">
+          <a href="/todos/<%= i %>"><h2><%= todos[i].title %></h2></a>
+          <p class="desc"><%= todos[i].description %></p>
+          <h3 class="comp">
+            <%= todos[i].isComplete ? "Completed" : "Not Complete"%>
+          </h3>
+          <div class="buttons">
+            <a class="edit" href="/todos/<%= i %>/edit"
+              ><img
+                src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png"
+                alt="Edit Button"
+            /></a>
+            <form action="/todos/<%= i %>/?_method=DELETE" method="post">
+              <a class="delete" href="/todos"
+                ><img
+                  src="https://www.freeiconspng.com/thumbs/trash-can-icon/trash-can-icon-3.png"
+                  alt="Delete Button"
+              /></a>
+            </form>
+          </div>
+        </div>
+        <% } %>
+      </ul>
     </div>
-    <% } %>
-    </div>
-</body>
+  </body>
 </html>
