@@ -26,6 +26,10 @@ mongoose.connection
 const app = express();
 
 // MIDDLE WARE
+app.use(morgan("dev"));
+app.use(methodOverride("method-override"));
+app.use(express.urlencoded({ extended: false }));
+app.use("/public", express.static("public"));
 
 // ROUTES
 // Test
@@ -33,7 +37,23 @@ app.get("/", (req, res) => {
   res.send("It's Working");
 });
 
+// Seed
+
+// Index
+
+// New
+
+// Create
+
+// Edit
+
+// Update
+
+// Destroy
+
+// Show
+
 // LISTENER
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+  console.log(`Organizing on port ${PORT}`);
 });
