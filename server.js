@@ -63,6 +63,9 @@ app.get("/todos", async (req, res) => {
 });
 
 // New
+app.get("/todos/new", (req, res) => {
+  res.render("new.ejs");
+});
 
 // Create
 

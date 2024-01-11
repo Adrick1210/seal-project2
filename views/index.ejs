@@ -3,6 +3,10 @@
   <%- include("./partials/head.ejs") %>
   <body>
     <h1>Todo List</h1>
+    <nav class="nav">
+      <h3>All Todos</h3>
+      <a href="/todos/new">Add</a>
+    </nav>
     <div class="content">
       <ul class="list">
         <% for(let i = 0; i < todos.length; i++) { %>
