@@ -42,6 +42,15 @@ app.get("/", (req, res) => {
 // Seed
 
 // Index
+app.get("/todos", async (req, res) => {
+  try {
+    const todos = await Todo.find({});
+    res.render("index.ejs", { todos });
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // New
 
