@@ -4,6 +4,8 @@ const express = require("express");
 const morgan = require("morgan");
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
+const Todo = require("./models/todo");
+const seedData = require("./models/seed");
 
 // ENV VARIABLES
 const { DATABASE_URL, SECRET, PORT } = process.env;
