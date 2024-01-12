@@ -68,6 +68,16 @@ app.get("/todos/new", (req, res) => {
 });
 
 // Create
+app.post("/todos", async (req, res) => {
+  try {
+    req.body.isComplete = req.body.isComplete === "on" ? true : false;
+    await Todo.create(req.body);
+    res.redirect("/todos");
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // Edit
 

@@ -18,3 +18,9 @@ a{
     flex-direction: row;
     gap: 35px;
 }
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
