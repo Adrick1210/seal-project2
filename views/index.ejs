@@ -17,7 +17,7 @@
             <%= todos[i].isComplete ? "Completed" : "Not Complete"%>
           </h3>
           <div class="buttons">
-            <a class="edit" href="/todos/<%= i %>/edit"
+            <a class="edit" href="/todos/<%= todos[i]._id %>/edit"
               ><img
                 src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png"
                 alt="Edit Button"

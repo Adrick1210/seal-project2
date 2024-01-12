@@ -80,6 +80,16 @@ app.post("/todos", async (req, res) => {
 });
 
 // Edit
+app.get("/todos/:id/edit", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const todos = await Todo.findById(id);
+    res.render("edit.ejs", { todos });
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // Update
 
