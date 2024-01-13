@@ -29,7 +29,7 @@ const app = express();
 
 // MIDDLE WARE
 app.use(morgan("dev"));
-app.use(methodOverride("method-override"));
+app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use("/public", express.static("public"));
 
@@ -92,6 +92,17 @@ app.get("/todos/:id/edit", async (req, res) => {
 });
 
 // Update
+app.put("/todos/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    req.body.isComplete = req.body.isComplete === "on" ? true : false;
+    await Todo.findByIdAndUpdate(id, req.body);
+    res.redirect(`/todos/`);
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // Destroy
 

@@ -4,7 +4,7 @@
   <body>
     <a href="/todos">Return to list</a>
     <div>
-        <form action="/todos/<%= todos.id %>?_method=PUT" method="post">
+        <form action="/todos/<%= todos._id %>?_method=PUT" method="post">
             <h1>Edit "<%= todos.title %>"</h1>
             <label
               >Title:<input 

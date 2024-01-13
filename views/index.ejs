@@ -14,7 +14,7 @@
           <a href="/todos/<%= todos[i]._id %>"><h2><%= todos[i].title %></h2></a>
           <p class="description"><%= todos[i].description %></p>
           <h3 class="complete">
-            <%= todos[i].isComplete ? "Completed" : "Not Complete"%>
+            <%= todos[i].isComplete ? "Completed" : "Incomplete"%>
           </h3>
           <div class="buttons">
             <a class="edit" href="/todos/<%= todos[i]._id %>/edit"
