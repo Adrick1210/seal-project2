@@ -22,12 +22,12 @@
                 src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png"
                 alt="Edit Button"
             /></a>
-            <form action="/todos/<%= i %>/?_method=DELETE" method="post">
-              <a class="delete" href="/todos"
+            <form action="/todos/<%= todos[i]._id %>/?_method=DELETE" method="post">
+              <button class="delete" 
                 ><img
                   src="https://www.freeiconspng.com/thumbs/trash-can-icon/trash-can-icon-3.png"
                   alt="Delete Button"
-              /></a>
+              /></button>
             </form>
           </div>
         </div>
