@@ -6,6 +6,8 @@ const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const Todo = require("./models/todo");
 const seedData = require("./models/seed");
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
 
 // ENV VARIABLES
 const { DATABASE_URL, SECRET, PORT } = process.env;
@@ -29,9 +31,17 @@ const app = express();
 
 // MIDDLE WARE
 app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-app.use(express.urlencoded({ extended: false }));
 app.use("/public", express.static("public"));
+app.use(
+  session ({
+    secret: process.env.SECRET,
+    store: MongoStore.create({mongoUrl: process.env.DATABASE_URL}),
+    saveUninitialized: true,
+    resave: false,
+  })
+)
 
 // ROUTES
 // Test
@@ -50,6 +60,23 @@ app.get("/todos/seed", async (req, res) => {
     res.status(400).send("error, read logs for error details");
   }
 });
+
+// USER ROUTES
+// Sign Up page
+app.get("/signup", (req,res) => {
+  res.render("user/signup.ejs");
+})
+
+// Sign up Submit
+
+// Login Page
+app.get("/login", (req,res) => {
+  res.render("user/login.ejs");
+})
+
+// Login Submit
+
+// Logout
 
 // Index
 app.get("/todos", async (req, res) => {

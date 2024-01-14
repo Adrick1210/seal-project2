@@ -13,6 +13,12 @@ a{
     width: 75px;
 }
 
+.delete {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
 .buttons {
     display: flex;
     flex-direction: row;
