@@ -80,6 +80,25 @@ app.get("/user/login", (req, res) => {
 });
 
 // Login Submit
+app.post("/user/login", async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username });
+    if (!user) {
+      throw new Error("User Does Not Exist");
+    }
+    const result = await bcrypt.compare(password, user.password);
+    if (!result) {
+      throw new Error("Password Does Not Match");
+    }
+    req.session.username = username;
+    req.session.loggedIn = true;
+    res.redirect("/todos");
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // Logout
 
