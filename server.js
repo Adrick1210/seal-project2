@@ -1,12 +1,14 @@
 // DEPENDENCIES
 const express = require("express");
 const middleware = require("./utils/middleware");
+const routers = require("./utils/routers");
 
 // APP OBJECT
 const app = express();
 
 // MIDDLE WARE
 middleware(app);
+routers(app);
 
 // ROUTES
 // Test
