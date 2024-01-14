@@ -3,7 +3,12 @@
   <%- include("./partials/head.ejs") %>
   <body>
     <h1>Todo List</h1>
-    <nav class="nav">
+    <nav class="user-nav">
+      <a href="/login">Login</a>
+      <a href="/signup">SignUp</a>
+      <a href="/logout">LogOut</a>
+    </nav>
+    <nav class="list-control">
       <h3>All Todos</h3>
       <a href="/todos/new">Add</a>
     </nav>

@@ -67,7 +67,7 @@ app.post("/user/signup", async (req, res) => {
     // logger for password
     console.log("Hashed Password:", req.body.password);
     await User.create(req.body);
-    res.redirect("/user/login");
+    res.redirect("/login");
   } catch (error) {
     console.log("-----", error.message, "-----");
     res.status(400).send("error, read logs for error details");
@@ -75,7 +75,7 @@ app.post("/user/signup", async (req, res) => {
 });
 
 // Login Page
-app.get("/user/login", (req, res) => {
+app.get("/login", (req, res) => {
   res.render("user/login.ejs");
 });
 
@@ -101,6 +101,11 @@ app.post("/user/login", async (req, res) => {
 });
 
 // Logout
+app.get("/logout", async (req,res) => {
+  req.session.destroy((err) => {
+    res.redirect("/login");
+  })
+})
 
 // Seed
 app.get("/todos/seed", async (req, res) => {
