@@ -2,15 +2,19 @@
 <html lang="en">
   <%- include("./partials/head.ejs") %>
   <body>
-    <h1>Todo List</h1>
+    <div class="page-head">
+      <h1>Todo List</h1>
+      <img src="https://icons.iconarchive.com/icons/gartoon-team/gartoon-apps/512/gtodo-todo-list-icon.png" alt="todo-icon">
+    </div>
+    
     <nav class="user-nav">
       <a href="/user/login">Login</a>
-      <a href="/user/signup">Sign Up</a>
+      <a href="/user/signup">SignUp</a>
       <a href="/user/logout">LogOut</a>
     </nav>
     <nav class="list-control">
       <h3>All Todos</h3>
-      <a href="/todos/new">Add</a>
+      <a href="/todos/new">+</a>
     </nav>
     <div class="content">
       <ul class="list">
