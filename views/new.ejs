@@ -4,31 +4,34 @@
   <body>
     <a href="/todos">Return to list</a>
     <div>
-        <form action="/todos" method="post">
+        <form action="/todos" method="post" class="field">
             <h1>Create a new Todo</h1>
             <label
-              >Title:<input 
+              >Title:</label>
+              <input 
               type="text" 
               name="title" 
-              placeholder="name of todo" 
+              placeholder="name of todo"
+              class="text"
               required/>
-            </label>
+            
             <br>
             <label
-              >Description:<textarea
+              >Description:</label>
+              <textarea
                 name="description"
-                rows="5" 
-                cols="40"
                 placeholder="Add a description"
                 required>
-            </textarea></label><br>
-            <label
-              >Complete?<input 
+            </textarea><br>
+            <label 
+              >Complete?
+              <input 
               type="checkbox" 
-              name="isComplete"/>
+              name="isComplete"
+              class="checkbox"/>
             </label>
             <br>
-            <button>Create New Todo</button> 
+            <button class="new">Create New Todo</button> 
         </form>
   </body>
 </html>

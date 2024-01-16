@@ -4,23 +4,25 @@
   <body>
     <a href="/todos">Return to list</a>
     <div>
-        <form action="/todos/<%= todos._id %>?_method=PUT" method="post">
+        <form action="/todos/<%= todos._id %>?_method=PUT" method="post" class="field">
             <h1>Edit "<%= todos.title %>"</h1>
             <label
-              >Title:<input 
+              >Title:</label>
+              <input 
               type="text" 
               name="title" 
               value="<%= todos.title %>"
               required/>
-            </label>
+            
             <br>
             <label
-              >Description:<textarea
+              >Description:</label>
+              <textarea
                 name="description"
                 value="<%= todos.description %>"
                 required>
             </textarea>
-        </label>
+        
         <br>
             <label
               >Complete:<input 

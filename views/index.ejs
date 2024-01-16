@@ -2,19 +2,16 @@
 <html lang="en">
   <%- include("./partials/head.ejs") %>
   <body>
-    <div class="page-head">
-      <h1>Todo List</h1>
-      <img src="https://icons.iconarchive.com/icons/gartoon-team/gartoon-apps/512/gtodo-todo-list-icon.png" alt="todo-icon">
-    </div>
+    <%- include("./partials/header.ejs") %>
     
     <nav class="user-nav">
-      <a href="/user/login">Login</a>
-      <a href="/user/signup">SignUp</a>
-      <a href="/user/logout">LogOut</a>
+      <a href="/user/login"><button>Login</button></a>
+      <a href="/user/signup"><button>SignUp</button></a>
+      <a href="/user/logout"><button>LogOut</button></a>
     </nav>
     <nav class="list-control">
       <h3>All Todos</h3>
-      <a href="/todos/new">+</a>
+      <a href="/todos/new"><button>+</button></a>
     </nav>
     <div class="content">
       <ul class="list">
@@ -32,17 +29,20 @@
                 alt="Edit Button"
             /></a>
             <form action="/todos/<%= todos[i]._id %>/?_method=DELETE" method="post">
-              <button class="delete">
+              <a class="delete">
                 <img
                   src="https://www.freeiconspng.com/thumbs/trash-can-icon/trash-can-icon-3.png"
                   alt="Delete Button"
               />
-            </button>
+            </a>
             </form>
           </div>
         </div>
         <% } %>
       </ul>
     </div>
+    <footer>
+      Adrick-Development &copy; 2024
+    </footer>
   </body>
 </html>
