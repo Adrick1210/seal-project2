@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <a href="/todos">Return to list</a>
+      <div>
+        <form action="/user/signup" method="post" class="user-form">
+         
+            <h1>Create a New Account</h1>
+            <label
+              >USERNAME: <input type="text" name="username" class="text" />
+            </label>
+            <label
+              >PASSWORD: <input type="password" name="password" class="text" />
+            </label>
+            <button class="but-style sign">Submit</button>
+          
+        </form>
+      </div>
+    </main>
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

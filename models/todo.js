@@ -9,6 +9,7 @@ const todoSchema = new Schema({
   title: String,
   description: String,
   isComplete: Boolean,
+  username: String,
 });
 
 // MODEL
