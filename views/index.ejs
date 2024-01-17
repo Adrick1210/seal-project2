@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
-</head>
-<body>
-    <h1>Lets make some todos</h1>
-</body>
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <h1>Todo List</h1>
+    <nav class="nav">
+      <h3>All Todos</h3>
+      <a href="/todos/new">Add</a>
+    </nav>
+    <div class="content">
+      <ul class="list">
+        <% for(let i = 0; i < todos.length; i++) { %>
+        <div class="card">
+          <a href="/todos/<%= todos[i]._id %>"><h2><%= todos[i].title %></h2></a>
+          <p class="description"><%= todos[i].description %></p>
+          <h3 class="complete">
+            <%= todos[i].isComplete ? "Completed" : "Incomplete"%>
+          </h3>
+          <div class="buttons">
+            <a class="edit" href="/todos/<%= todos[i]._id %>/edit"
+              ><img
+                src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png"
+                alt="Edit Button"
+            /></a>
+            <form action="/todos/<%= todos[i]._id %>/?_method=DELETE" method="post">
+              <button class="delete" 
+                ><img
+                  src="https://www.freeiconspng.com/thumbs/trash-can-icon/trash-can-icon-3.png"
+                  alt="Delete Button"
+              /></button>
+            </form>
+          </div>
+        </div>
+        <% } %>
+      </ul>
+    </div>
+  </body>
 </html>

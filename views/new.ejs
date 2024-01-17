@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <a href="/todos">Return to list</a>
+    <div>
+        <form action="/todos" method="post">
+            <h1>Create a new Todo</h1>
+            <label
+              >Title:<input 
+              type="text" 
+              name="title" 
+              placeholder="name of todo" 
+              required/>
+            </label>
+            <br>
+            <label
+              >Description:<textarea
+                name="description"
+                rows="5" 
+                cols="40"
+                placeholder="Add a description"
+                required>
+            </textarea></label><br>
+            <label
+              >Complete?<input 
+              type="checkbox" 
+              name="isComplete"/>
+            </label>
+            <br>
+            <button>Create New Todo</button> 
+        </form>
+  </body>
+</html>

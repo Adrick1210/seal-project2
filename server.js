@@ -29,7 +29,7 @@ const app = express();
 
 // MIDDLE WARE
 app.use(morgan("dev"));
-app.use(methodOverride("method-override"));
+app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use("/public", express.static("public"));
 
@@ -40,6 +40,16 @@ app.get("/", (req, res) => {
 });
 
 // Seed
+app.get("/todos/seed", async (req, res) => {
+  try {
+    await Todo.deleteMany({});
+    const todos = await Todo.create(seedData);
+    res.json(todos);
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // Index
 app.get("/todos", async (req, res) => {
@@ -53,16 +63,70 @@ app.get("/todos", async (req, res) => {
 });
 
 // New
+app.get("/todos/new", (req, res) => {
+  res.render("new.ejs");
+});
 
 // Create
+app.post("/todos", async (req, res) => {
+  try {
+    req.body.isComplete = req.body.isComplete === "on" ? true : false;
+    await Todo.create(req.body);
+    res.redirect("/todos");
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // Edit
+app.get("/todos/:id/edit", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const todos = await Todo.findById(id);
+    res.render("edit.ejs", { todos });
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // Update
+app.put("/todos/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    req.body.isComplete = req.body.isComplete === "on" ? true : false;
+    await Todo.findByIdAndUpdate(id, req.body);
+    res.redirect("/todos/");
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // Destroy
+app.delete("/todos/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    await Todo.findByIdAndDelete(id);
+    res.redirect("/todos");
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // Show
+app.get("/todos/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const todos = await Todo.findById(id);
+    res.render("show.ejs", { todos });
+  } catch (error) {
+    console.log("-----", error.message, "-----");
+    res.status(400).send("error, read logs for error details");
+  }
+});
 
 // LISTENER
 app.listen(PORT, () => {

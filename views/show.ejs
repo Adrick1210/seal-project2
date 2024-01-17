@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <a href="/todos">Return to list</a>
+    <div class="todo-show">
+      <h2><%= todos.title %></h2>
+      <p><%= todos.description %></p>
+      <h3><%= todos.isComplete ? "Completed" : "Not Complete" %></h3>
+</body>
+</html>

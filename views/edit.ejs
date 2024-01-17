@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <a href="/todos">Return to list</a>
+    <div>
+        <form action="/todos/<%= todos._id %>?_method=PUT" method="post">
+            <h1>Edit "<%= todos.title %>"</h1>
+            <label
+              >Title:<input 
+              type="text" 
+              name="title" 
+              value="<%= todos.title %>"
+              required/>
+            </label>
+            <br>
+            <label
+              >Description:<textarea
+                name="description"
+                value="<%= todos.description %>"
+                required>
+            </textarea>
+        </label>
+        <br>
+            <label
+              >Complete:<input 
+              type="checkbox" 
+              name="isComplete" 
+              <%= todos.isComplete ? "checked" : "" %>/>
+            </label>
+            <br>
+            <button>Update Todo</button> 
+        </form>
+  </body>
+</html>
