@@ -135,10 +135,21 @@ body {
 }
 
 /* buttons */
+.add {
+   top: -10px;
+}
+
 .edit-but img {
   height: 75px;
   width: 75px;
 }
+
+.edit {
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+}
+
 .delete img {
   height: 75px;
   width: 75px;
@@ -153,7 +164,7 @@ body {
 .buttons {
   display: flex;
   flex-direction: row;
-  gap: 75px;
+  gap: 65px;
   position: relative;
   margin-left: 640px;
   top: -125px;
@@ -288,6 +299,25 @@ label{
   margin-left: 170px;
   margin-right: 170px;
 }
+
+/* modal styles */
+.modal {
+  height: 1900px;
+  width: 1000px;
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal form{
+   opacity: 1;
+   margin-top: 400px;
+}
+
+.close {
+  position: relative;
+  left: 380px;
+  top: 80px;
+}
+
 /* footer style */
 footer {
   font-size: 2.5rem;

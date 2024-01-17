@@ -62,8 +62,8 @@ router.post("/", async (req, res) => {
 router.get("/:id/edit", async (req, res) => {
   try {
     const id = req.params.id;
-    const todos = await Todo.findById(id);
-    res.render("edit.ejs", { todos });
+    const todo = await Todo.findById(id);
+    res.render("edit.ejs", { todo });
   } catch (error) {
     console.log("-----", error.message, "-----");
     res.status(400).send("error, read logs for error details");

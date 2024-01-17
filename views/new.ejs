@@ -1,42 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("./partials/head.ejs") %>
   <body>
-    <%- include("./partials/header.ejs") %>
-    <a href="/todos">Return to list</a>
-    <div>
-        <form action="/todos" method="post" class="field">
-            <h1>Create a new Todo</h1>
-            <label
-              >Title:</label>
-              <input 
-              type="text" 
-              name="title" 
-              placeholder="name of todo"
-              class="text"
-              required/>
-            
-            <br>
-            <label
-              >Description:</label>
-              <input
-                type="text"
-                name="description"
-                placeholder="Add a description"
-                class="text"
-                required>
-            </input><br>
-            <label 
-              >Complete?
-              <input 
-              type="checkbox" 
-              name="isComplete"
-              class="checkbox"/>
-            </label>
-            <br>
-            <button class="new but-style">Create New Todo</button> 
-        </form>
-        <%- include("./partials/return.ejs") %>
-        <%- include("./partials/footer.ejs") %>
+    <form action="/todos" method="post" class="field">
+      <h1>Create a new Todo</h1>
+      <label>Title:</label>
+      <input
+        type="text"
+        name="title"
+        placeholder="title"
+        class="text"
+        required
+      />
+
+      <br />
+      <label>Description:</label>
+      <input
+        type="text"
+        name="description"
+        placeholder="Add a description"
+        class="text"
+        required
+      />
+      <br />
+      <label
+        >Complete?
+        <input type="checkbox" name="isComplete" class="checkbox" />
+      </label>
+      <br />
+      <button class="new but-style" onclick="addModal.close()">
+        Create New Todo
+      </button>
+    </form>
   </body>
 </html>

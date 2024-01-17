@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("./partials/head.ejs") %>
   <body>
-    <%- include("./partials/header.ejs") %>
-    <div>
-        <form action="/todos/<%= todos._id %>?_method=PUT" method="post" class="field">
-            <h1>Edit "<%= todos.title %>"</h1>
-            <label
-              >Title:</label>
-              <input 
-              type="text" 
-              name="title" 
-              value="<%= todos.title %>"
-              class="text"
-              required/>
-            
-            <br>
-            <label
-              >Description:</label>
-              <input
-                type="text"
-                name="description"
-                value="<%= todos.description %>"
-                class="text"
-                required>
-            </input>
-        
-        <br>
-            <label
-              >Complete:<input 
-              type="checkbox" 
-              name="isComplete" 
-              class="checkbox"
-              <%= todos.isComplete ? "checked" : "" %>/>
-              
-            </label>
-            <br>
-            <button class="edit but-style">Update Todo</button> 
-        </form>
-        <%- include("./partials/return.ejs") %>
-        <%- include("./partials/footer.ejs") %>
+    <form
+      action="/todos/<%= todos._id %>?_method=PUT"
+      method="post"
+      class="field"
+    >
+      <h1><%= todos.title %></h1>
+      <label>Title:</label>
+      <input
+        type="text"
+        name="title"
+        placeholder="<%= todos.title %>"
+        class="text"
+        required
+      />
+
+      <br />
+      <label>Description:</label>
+      <input
+        type="text"
+        name="description"
+        value="<%= todos.description %>"
+        class="text"
+        required
+      />
+
+      <br />
+      <label
+        >Complete:<input type="checkbox" name="isComplete" class="checkbox" <%=
+        todos.isComplete ? "checked" : "" %>/>
+      </label>
+      <br />
+      <button class="edit but-style" onclick="editModal.close()">Update Todo</button>
+    </form>
   </body>
 </html>
