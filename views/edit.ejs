@@ -2,34 +2,43 @@
 <html lang="en">
   <%- include("./partials/head.ejs") %>
   <body>
-    <a href="/todos">Return to list</a>
+    <%- include("./partials/header.ejs") %>
     <div>
-        <form action="/todos/<%= todos._id %>?_method=PUT" method="post">
+        <form action="/todos/<%= todos._id %>?_method=PUT" method="post" class="field">
             <h1>Edit "<%= todos.title %>"</h1>
             <label
-              >Title:<input 
+              >Title:</label>
+              <input 
               type="text" 
               name="title" 
               value="<%= todos.title %>"
+              class="text"
               required/>
-            </label>
+            
             <br>
             <label
-              >Description:<textarea
+              >Description:</label>
+              <input
+                type="text"
                 name="description"
                 value="<%= todos.description %>"
+                class="text"
                 required>
-            </textarea>
-        </label>
+            </input>
+        
         <br>
             <label
               >Complete:<input 
               type="checkbox" 
               name="isComplete" 
+              class="checkbox"
               <%= todos.isComplete ? "checked" : "" %>/>
+              
             </label>
             <br>
-            <button>Update Todo</button> 
+            <button class="edit but-style">Update Todo</button> 
         </form>
+        <%- include("./partials/return.ejs") %>
+        <%- include("./partials/footer.ejs") %>
   </body>
 </html>
