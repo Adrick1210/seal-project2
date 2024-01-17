@@ -11,11 +11,13 @@
     </nav>
     <nav class="list-control">
       <h3>All Todos</h3>
-      <button class="but-style" onclick="addModal.showModal()">+</button>
+      <button class="but-style add" onclick="addModal.showModal()">+</button>
       <dialog id="addModal" class="modal">
-      <%- include("./new.ejs") %>
-    <button onclick="addModal.close()">close</button>
-  </dialog>
+        <%- include("./new.ejs") %>
+        <button class="but-style close" onclick="addModal.close()">
+          close
+        </button>
+      </dialog>
     </nav>
     <div class="content">
       <ul class="list">
@@ -29,11 +31,18 @@
             <%= todos[i].isComplete ? "Completed" : "Incomplete"%>
           </h3>
           <div class="buttons">
-            <a class="edit-but" href="/todos/<%= todos[i]._id %>/edit"
-              ><img
+            <button class="edit-but" onclick="editModal.showModal()">
+              <img
                 src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png"
                 alt="Edit Button"
-            /></a>
+              />
+            </button>
+            <dialog id="editModal" class="modal">
+              <%- include("./edit.ejs", {todos: todos[i]._id }) %>
+              <button class="but-style close" onclick="addModal.close()">
+                close
+              </button>
+            </dialog>
             <form
               action="/todos/<%= todos[i]._id %>/?_method=DELETE"
               method="post"
