@@ -23,11 +23,15 @@
             <%= todos[i].isComplete ? "Completed" : "Incomplete"%>
           </h3>
           <div class="buttons">
-            <a class="edit-but" href="/todos/<%= todos[i]._id %>/edit"
+            <a onclick="editModal.showModal()" class="edit-but" href="/todos/<%= todos[i]._id %>/edit"
               ><img
                 src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png"
                 alt="Edit Button"
             /></a>
+            <dialog id="editModal" class="modal">
+              <%- include("./edit.ejs", { todos: todos[i]._id } ) %>
+              <button class="close">Close</button>
+            </dialog>
             <form action="/todos/<%= todos[i]._id %>/?_method=DELETE" method="post">
               <button class="delete">
                 <img

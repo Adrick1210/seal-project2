@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <%- include("./partials/head.ejs") %>
-  <body>
-    <%- include("./partials/header.ejs") %>
-    <div>
+
         <form action="/todos/<%= todos._id %>?_method=PUT" method="post" class="field">
             <h1>Edit "<%= todos.title %>"</h1>
             <label
@@ -36,9 +31,5 @@
               
             </label>
             <br>
-            <button class="edit but-style">Update Todo</button> 
+            <button onclick="editModal.close()" class="edit but-style">Update Todo</button> 
         </form>
-        <%- include("./partials/return.ejs") %>
-        <%- include("./partials/footer.ejs") %>
-  </body>
-</html>

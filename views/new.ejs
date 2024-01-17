@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("./partials/head.ejs") %>
   <body>
-    <%- include("./partials/header.ejs") %>
     <a href="/todos">Return to list</a>
     <div>
         <form action="/todos" method="post" class="field">
@@ -36,7 +34,5 @@
             <br>
             <button class="new but-style">Create New Todo</button> 
         </form>
-        <%- include("./partials/return.ejs") %>
-        <%- include("./partials/footer.ejs") %>
   </body>
 </html>
