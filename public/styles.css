@@ -104,7 +104,7 @@ body {
   border-radius: 20px;
   opacity: 0.9;
   background-color: whitesmoke;
-  margin-right: 40px;
+  margin-right: 50px;
   height: 200px;
 }
 
@@ -190,6 +190,7 @@ body {
   will-change: box-shadow,transform;
   font-size: 18px;
   font-size: 2rem;
+  margin-top: 20px;
 }
 
 .but-style:focus {
@@ -227,6 +228,7 @@ body {
 label{
   text-align: start;
   display: flex;
+  font-size: 2rem;
  }
 
  input {
@@ -257,6 +259,35 @@ label{
   margin-right: 100px;
 }
 
+/* user forms */
+.user-form {
+  margin-top: 250px;
+  margin-left: 120px;
+  margin-right: 120px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-radius: 20px;
+  font-style: italic;
+  background-color: whitesmoke;
+  opacity: 0.8;
+}
+
+.user-form h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.log {
+  margin-left: 170px;
+  margin-right: 170px;
+}
+
+.sign {
+  margin-left: 170px;
+  margin-right: 170px;
+}
 /* footer style */
 footer {
   font-size: 2.5rem;

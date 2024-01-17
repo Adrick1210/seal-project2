@@ -59,7 +59,7 @@ router.get("/signup", (req, res) => {
   // Logout
   router.get("/logout", async (req, res) => {
     req.session.destroy((err) => {
-      res.redirect("/user/signup");
+      res.redirect("/user/login");
     });
   });
 
