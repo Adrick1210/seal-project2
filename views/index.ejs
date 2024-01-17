@@ -3,7 +3,7 @@
   <%- include("./partials/head.ejs") %>
   <body>
     <%- include("./partials/header.ejs") %>
-    
+
     <nav class="user-nav">
       <a href="/user/login"><button class="but-style">Login</button></a>
       <a href="/user/signup"><button class="but-style">SignUp</button></a>
@@ -17,28 +17,29 @@
       <ul class="list">
         <% for(let i = 0; i < todos.length; i++) { %>
         <div class="card">
-          <a href="/todos/<%= todos[i]._id %>"><h2><%= todos[i].title %></h2></a>
+          <a href="/todos/<%= todos[i]._id %>"
+            ><h2><%= todos[i].title %></h2></a
+          >
           <p class="description"><%= todos[i].description %></p>
           <h3 class="complete">
             <%= todos[i].isComplete ? "Completed" : "Incomplete"%>
           </h3>
           <div class="buttons">
-            <a onclick="editModal.showModal()" class="edit-but" href="/todos/<%= todos[i]._id %>/edit"
+            <a class="edit-but" href="/todos/<%= todos[i]._id %>/edit"
               ><img
                 src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png"
                 alt="Edit Button"
             /></a>
-            <dialog id="editModal" class="modal">
-              <%- include("./edit.ejs", { todos: todos[i]._id } ) %>
-              <button class="close">Close</button>
-            </dialog>
-            <form action="/todos/<%= todos[i]._id %>/?_method=DELETE" method="post">
+            <form
+              action="/todos/<%= todos[i]._id %>/?_method=DELETE"
+              method="post"
+            >
               <button class="delete">
                 <img
                   src="https://www.freeiconspng.com/thumbs/trash-can-icon/trash-can-icon-3.png"
                   alt="Delete Button"
-              />
-            </button>
+                />
+              </button>
             </form>
           </div>
         </div>
