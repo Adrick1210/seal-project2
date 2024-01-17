@@ -38,8 +38,8 @@
               />
             </button>
             <dialog id="editModal" class="modal">
-              <%- include("./edit.ejs", {todos: todos[i]._id }) %>
-              <button class="but-style close" onclick="addModal.close()">
+              <%- include("./edit.ejs", { todos: todos[i]._id }) %>
+              <button class="but-style close" onclick="editModal.close()">
                 close
               </button>
             </dialog>

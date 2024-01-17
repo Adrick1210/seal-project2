@@ -164,7 +164,7 @@ body {
 .buttons {
   display: flex;
   flex-direction: row;
-  gap: 75px;
+  gap: 65px;
   position: relative;
   margin-left: 640px;
   top: -125px;
