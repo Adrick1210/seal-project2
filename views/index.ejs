@@ -11,7 +11,11 @@
     </nav>
     <nav class="list-control">
       <h3>All Todos</h3>
-      <a href="/todos/new"><button class="but-style">+</button></a>
+      <button class="but-style" onclick="addModal.showModal()">+</button>
+      <dialog id="addModal" class="modal">
+      <%- include("./new.ejs") %>
+    <button onclick="addModal.close()">close</button>
+  </dialog>
     </nav>
     <div class="content">
       <ul class="list">
