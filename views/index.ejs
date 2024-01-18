@@ -4,29 +4,26 @@
   <body>
     <%- include("./partials/header.ejs") %>
 
-    <nav class="user-nav">
-      <a href="/user/login"><button class="but-style">Login</button></a>
-      <a href="/user/signup"><button class="but-style">SignUp</button></a>
-      <a href="/user/logout"><button class="but-style">LogOut</button></a>
-    </nav>
     <nav class="list-control">
       <h3>All Todos</h3>
-      <button class="but-style add" onclick="addModal.showModal()">+</button>
+      <button class="but-style add" onclick="addModal.showModal()">Add</button>
       <dialog id="addModal" class="modal">
         <%- include("./new.ejs") %>
         <button class="but-style close" onclick="addModal.close()">
           close
         </button>
       </dialog>
+      <a href="/user/logout"><button class="but-style logout">LogOut</button></a>
     </nav>
     <div class="content">
       <ul class="list">
         <% for(let i = 0; i < todos.length; i++) { %>
         <div class="card">
-          <a href="/todos/<%= todos[i]._id %>" onclick="showModal.showModal()"
-            ><h2><%= todos[i].title %></h2></a
+          <a class="todo"
+            href="/todos/<%= todos[i]._id %>"
           >
-
+            <h1><%= todos[i].title %></h1>
+          </a>
           <p class="description"><%= todos[i].description %></p>
           <h3 class="complete">
             <%= todos[i].isComplete ? "Completed" : "Incomplete"%>

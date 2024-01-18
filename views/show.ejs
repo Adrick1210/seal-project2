@@ -2,10 +2,13 @@
 <html lang="en">
     <%- include("./partials/head.ejs") %>
 <body>
-    <a href="/todos">Return to list</a>
+  <%- include("./partials/header.ejs") %>
     <div class="todo-show">
       <h2><%= todos.title %></h2>
       <p><%= todos.description %></p>
       <h3><%= todos.isComplete ? "✅" : "❌" %></h3>
+    </div>
+    <a href="/todos"><button class="but-style return">Return</button></a>
+    <%- include("./partials/footer.ejs") %>
 </body>
 </html>
