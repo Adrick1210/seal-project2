@@ -24,11 +24,8 @@
 
 ##### Frontend (If used, ex. jquery, alpine, bootstrap, htmx, etc)
 
-- Alpine
-- Javascript
-- Jquery
 - CSS
-- HTMX
+
 
 ## Route Map
 

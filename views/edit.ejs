@@ -6,25 +6,25 @@
       method="post"
       class="field"
     >
-      <h1><%= todos.title %></h1>
-      <label>Title:</label>
-      <input
+      <h1>Edit <%= todos.title %></h1>
+      <label>Title:<input
         type="text"
         name="title"
-        placeholder="<%= todos.title %>"
+        value="<%= todos.title %>"
         class="text"
         required
-      />
+      /></label>
+      
 
       <br />
-      <label>Description:</label>
-      <input
+      <label>Description:<input
         type="text"
         name="description"
         value="<%= todos.description %>"
         class="text"
         required
-      />
+      /></label>
+      
 
       <br />
       <label
