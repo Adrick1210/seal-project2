@@ -23,23 +23,27 @@
       <ul class="list">
         <% for(let i = 0; i < todos.length; i++) { %>
         <div class="card">
-          <a href="/todos/<%= todos[i]._id %>"
+          <a href="/todos/<%= todos[i]._id %>" onclick="showModal.showModal()"
             ><h2><%= todos[i].title %></h2></a
           >
+
           <p class="description"><%= todos[i].description %></p>
           <h3 class="complete">
             <%= todos[i].isComplete ? "Completed" : "Incomplete"%>
           </h3>
           <div class="buttons">
-            <button class="edit-but" onclick="editModal.showModal()">
+            <button class="edit-but" onclick="showModal('<%= todos[i]._id %>')">
               <img
                 src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png"
-                alt="Edit Button"
+                alt="edit-button"
               />
             </button>
-            <dialog id="editModal" class="modal">
-              <%- include("./edit.ejs", { todos: todos[i]._id }) %>
-              <button class="but-style close" onclick="editModal.close()">
+            <dialog id="<%= todos[i]._id %>" class="modal">
+              <%- include("./edit.ejs", { todos: todos[i] }) %>
+              <button
+                class="but-style close"
+                onclick="closeModal('<%= todos[i]._id %>')"
+              >
                 close
               </button>
             </dialog>
