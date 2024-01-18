@@ -23,7 +23,11 @@ router.get("/signup", (req, res) => {
       // logger for password
       console.log("Hashed Password:", req.body.password);
       await User.create(req.body);
-      res.redirect("/user/login");
+      const { username } = req.body;
+      await User.findOne({ username });
+      req.session.username = username;
+      req.session.loggedIn = true;
+      res.redirect("/todos");
     } catch (error) {
       console.log("-----", error.message, "-----");
       res.status(400).send("error, read logs for error details");
