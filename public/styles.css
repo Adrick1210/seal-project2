@@ -256,7 +256,7 @@ label{
  }
 
  input.text {
-  height: 60px;
+  height: 55px;
   font-size: 3rem;
   border-radius: 10px;
   border: none;
@@ -281,8 +281,17 @@ label{
 }
 
 /* user forms */
+.user-page {
+  background-color: lightgray;
+  width: 100%;
+  height: 1950px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .user-form {
-  margin-top: 250px;
+  margin-top: 550px;
   margin-left: 120px;
   margin-right: 120px;
   padding: 30px;

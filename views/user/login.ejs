@@ -3,9 +3,7 @@
   <%- include("../partials/head.ejs") %>
 
   <body>
-    <%- include("../partials/header.ejs") %>
-    <main>
-      <a href="/todos">Return to list</a>
+    <main class="user-page">
       <div>
         <form action="/user/login" method="post" class="user-form">
           
@@ -21,6 +19,5 @@
         </form>
       </div>
     </main>
-    <%- include("../partials/footer.ejs") %>
   </body>
 </html>
