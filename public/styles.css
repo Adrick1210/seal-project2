@@ -118,15 +118,15 @@ body {
 
 .complete {
   width: 150px;
-  position: relative;
-  left: 380px;
-  top: -38px;
+  position: absolute;
+  left: 430px;
+  margin-top: 80px;
   font-size: 2rem;
 }
 
 /* buttons */
 .add {
-   top: -10px;
+  top: -10px;
 }
 
 .edit-but img {
@@ -155,24 +155,29 @@ body {
   display: flex;
   flex-direction: row;
   gap: 55px;
-  position: relative;
+  position: absolute;
+  margin-top: 55px;
   margin-left: 640px;
-  top: -130px;
   margin-right: 20px;
 }
 
 .but-style {
   align-items: center;
   appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
   border: 0;
   border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
+  font-family: "JetBrains Mono", monospace;
   height: 48px;
   justify-content: center;
   line-height: 1;
@@ -183,23 +188,25 @@ body {
   position: relative;
   text-align: left;
   text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
+  transition: box-shadow 0.15s, transform 0.15s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
-  will-change: box-shadow,transform;
+  will-change: box-shadow, transform;
   font-size: 18px;
   font-size: 2rem;
   margin-top: 20px;
 }
 
 .but-style:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
 .but-style:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
@@ -213,13 +220,18 @@ body {
 }
 
 .todo {
-  position: relative;
-  top: 38px;
-  left: 20px;
-  font-size: 1.5rem;
+  position: absolute;
+  margin-top: 30px;
+  left: 65px;
+  font-size: 1.3rem;
   border: none;
   outline: none;
   background-color: whitesmoke;
+}
+
+.todo h1 {
+  width: 350px;
+  height: 100px;
 }
 
 .return {
@@ -244,31 +256,31 @@ body {
   top: 100px;
   height: 1200px;
 }
- 
-label{
+
+label {
   text-align: start;
   display: flex;
   font-size: 3rem;
- }
+}
 
- input {
+input {
   width: 100%;
- }
+}
 
- input.text {
+input.text {
   height: 55px;
   font-size: 3rem;
   border-radius: 10px;
   border: none;
   outline: none;
   margin-left: 10px;
- }
+}
 
- input.checkbox {
+input.checkbox {
   width: 120px;
   height: 120px;
   margin-left: 100px;
- }
+}
 
 .new {
   margin-left: 170px;
@@ -283,15 +295,27 @@ label{
 /* user forms */
 .user-page {
   background-color: lightgray;
+  height: 2100px;
   width: 100%;
-  height: 1950px;
   position: absolute;
   left: 0;
   top: 0;
 }
+.user-sign {
+  margin-top: 400px;
+}
+
+.user-log {
+  margin-top: -100px;
+}
+
+.seperate {
+  text-align: center;
+  margin-top: 160px;
+}
 
 .user-form {
-  margin-top: 550px;
+  margin-top: 250px;
   margin-left: 120px;
   margin-right: 120px;
   padding: 30px;
@@ -323,14 +347,14 @@ label{
 .modal {
   height: 2000px;
   width: 1000px;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
 }
 
-.modal form{
-   opacity: 1;
-   margin-top: 150px;
+.modal form {
+  opacity: 1;
+  margin-top: 150px;
 }
 
 .close {
@@ -378,4 +402,92 @@ footer {
   background-color: rgb(30, 131, 220);
 }
 
-
+@media only screen and (min-width: 1400px) {
+  /* user login */
+  .user-form {
+    margin-left: 500px;
+    margin-right: 500px;
+  }
+  .user-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    height: 900px;
+  }
+  .user-sign {
+    position: absolute;
+    left: -700px;
+    top: -400px;
+    margin-left: 270px;
+    margin-right: 570px;
+  }
+  .user-log {
+    position: absolute;
+    right: -700px;
+    top: 100px;
+    margin-left: 570px;
+    margin-right: 270px;
+  }
+  .seperate {
+    position: absolute;
+    left: 900px;
+    top: 250px;
+  }
+  /* index page */
+  .list-control {
+    margin-left: 550px;
+    margin-right: 550px;
+  }
+  .card {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+  .todo {
+    margin-left: 220px;
+    margin-top: 45px;
+    background: none;
+  }
+  .complete {
+    margin-left: 650px;
+  }
+  .description {
+    display: inline-block;
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 90px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 400px;
+  }
+  .buttons {
+    margin-left: 1150px;
+  }
+  /* modals */
+  .modal {
+    width: 100%;
+    height: 100%;
+  }
+  .modal form {
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 8px;
+    padding: 10px;
+    height: 790px;
+    width: 780px;
+  }
+  .close {
+    margin-left: 450px;
+    top: 10px;
+  }
+  .new {
+    top: -40px;
+    height: 100px;
+    width: 400px;
+  }
+  .edit {
+    top: -40px;
+    height: 100px;
+    width: 400px;
+  }
+}

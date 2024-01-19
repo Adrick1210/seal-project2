@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main class="user-page">
+      <div class="user-sign">
+        <form action="/user/signup" method="post" class="user-form">
+          <h1>Create a New Account</h1>
+          <label
+            >USERNAME: <input type="text" name="username" class="text" />
+          </label>
+          <label
+            >PASSWORD: <input type="password" name="password" class="text" />
+          </label>
+          <button class="but-style sign">Submit</button>
+        </form>
+      </div>
+      
+     <h1 class="seperate">-- OR --</h1>
+      <div class="user-log">
+        <form action="/user/login" method="post" class="user-form">
+          <h1>Please Login To Continue</h1>
+          <label class="user-name"
+            >USERNAME:
+            <input type="text" name="username" class="text" required />
+          </label>
+          <label class="user-pass"
+            >PASSWORD: <input type="password" name="password" class="text" />
+          </label>
+          <button class="but-style log">Submit</button>
+        </form>
+      </div>
+    </main>
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

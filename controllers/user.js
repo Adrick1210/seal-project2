@@ -10,7 +10,7 @@ const router = express.Router();
 
 // Sign Up page
 router.get("/signup", (req, res) => {
-    res.render("user/signup.ejs");
+    res.render("user/user.ejs");
   });
   
   // Sign up Submit
@@ -36,7 +36,7 @@ router.get("/signup", (req, res) => {
   
   // Login Page
   router.get("/login", (req, res) => {
-    res.render("user/login.ejs");
+    res.render("user/user.ejs");
   });
   
   // Login Submit
