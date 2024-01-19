@@ -118,9 +118,9 @@ body {
 
 .complete {
   width: 150px;
-  position: relative;
-  left: 380px;
-  top: -38px;
+  position: absolute;
+  left: 430px;
+  margin-top: 80px;
   font-size: 2rem;
 }
 
@@ -155,9 +155,9 @@ body {
   display: flex;
   flex-direction: row;
   gap: 55px;
-  position: relative;
+  position: absolute;
+  margin-top: 55px;
   margin-left: 640px;
-  top: -130px;
   margin-right: 20px;
 }
 
@@ -220,13 +220,18 @@ body {
 }
 
 .todo {
-  position: relative;
-  top: 38px;
-  left: 20px;
-  font-size: 1.5rem;
+  position: absolute;
+  margin-top: 30px;
+  left: 65px;
+  font-size: 1.3rem;
   border: none;
   outline: none;
   background-color: whitesmoke;
+}
+
+.todo h1 {
+  width: 350px;
+  height: 100px;
 }
 
 .return {
@@ -290,14 +295,14 @@ input.checkbox {
 /* user forms */
 .user-page {
   background-color: lightgray;
+  height: 2100px;
   width: 100%;
-  height: 1950px;
   position: absolute;
   left: 0;
   top: 0;
 }
 .user-sign {
-  margin-top: 100px
+  margin-top: 400px;
 }
 
 .user-log {
@@ -306,7 +311,7 @@ input.checkbox {
 
 .seperate {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 160px;
 }
 
 .user-form {
@@ -395,4 +400,94 @@ footer {
   right: 0;
   padding: 12px;
   background-color: rgb(30, 131, 220);
+}
+
+@media only screen and (min-width: 1400px) {
+  /* user login */
+  .user-form {
+    margin-left: 500px;
+    margin-right: 500px;
+  }
+  .user-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    height: 900px;
+  }
+  .user-sign {
+    position: absolute;
+    left: -700px;
+    top: -400px;
+    margin-left: 270px;
+    margin-right: 570px;
+  }
+  .user-log {
+    position: absolute;
+    right: -700px;
+    top: 100px;
+    margin-left: 570px;
+    margin-right: 270px;
+  }
+  .seperate {
+    position: absolute;
+    left: 900px;
+    top: 250px;
+  }
+  /* index page */
+  .list-control {
+    margin-left: 550px;
+    margin-right: 550px;
+  }
+  .card {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+  .todo {
+    margin-left: 220px;
+    margin-top: 45px;
+    background: none;
+  }
+  .complete {
+    margin-left: 650px;
+  }
+  .description {
+    display: inline-block;
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 90px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 400px;
+  }
+  .buttons {
+    margin-left: 1150px;
+  }
+  /* modals */
+  .modal {
+    width: 100%;
+    height: 100%;
+  }
+  .modal form {
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 8px;
+    padding: 10px;
+    height: 790px;
+    width: 780px;
+  }
+  .close {
+    margin-left: 450px;
+    top: 10px;
+  }
+  .new {
+    top: -40px;
+    height: 100px;
+    width: 400px;
+  }
+  .edit {
+    top: -40px;
+    height: 100px;
+    width: 400px;
+  }
 }
