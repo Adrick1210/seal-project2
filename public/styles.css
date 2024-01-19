@@ -126,7 +126,7 @@ body {
 
 /* buttons */
 .add {
-   top: -10px;
+  top: -10px;
 }
 
 .edit-but img {
@@ -164,15 +164,20 @@ body {
 .but-style {
   align-items: center;
   appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
   border: 0;
   border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
+  font-family: "JetBrains Mono", monospace;
   height: 48px;
   justify-content: center;
   line-height: 1;
@@ -183,23 +188,25 @@ body {
   position: relative;
   text-align: left;
   text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
+  transition: box-shadow 0.15s, transform 0.15s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
-  will-change: box-shadow,transform;
+  will-change: box-shadow, transform;
   font-size: 18px;
   font-size: 2rem;
   margin-top: 20px;
 }
 
 .but-style:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
 .but-style:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
@@ -244,31 +251,31 @@ body {
   top: 100px;
   height: 1200px;
 }
- 
-label{
+
+label {
   text-align: start;
   display: flex;
   font-size: 3rem;
- }
+}
 
- input {
+input {
   width: 100%;
- }
+}
 
- input.text {
+input.text {
   height: 55px;
   font-size: 3rem;
   border-radius: 10px;
   border: none;
   outline: none;
   margin-left: 10px;
- }
+}
 
- input.checkbox {
+input.checkbox {
   width: 120px;
   height: 120px;
   margin-left: 100px;
- }
+}
 
 .new {
   margin-left: 170px;
@@ -289,9 +296,21 @@ label{
   left: 0;
   top: 0;
 }
+.user-sign {
+  margin-top: 100px
+}
+
+.user-log {
+  margin-top: -100px;
+}
+
+.seperate {
+  text-align: center;
+  margin-top: 100px;
+}
 
 .user-form {
-  margin-top: 550px;
+  margin-top: 250px;
   margin-left: 120px;
   margin-right: 120px;
   padding: 30px;
@@ -323,14 +342,14 @@ label{
 .modal {
   height: 2000px;
   width: 1000px;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
 }
 
-.modal form{
-   opacity: 1;
-   margin-top: 150px;
+.modal form {
+  opacity: 1;
+  margin-top: 150px;
 }
 
 .close {
@@ -377,5 +396,3 @@ footer {
   padding: 12px;
   background-color: rgb(30, 131, 220);
 }
-
-
